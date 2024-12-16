@@ -4,6 +4,8 @@ Persistent
 #NoTrayIcon
 CoordMode('Mouse', 'Screen')
 CoordMode('ToolTip', 'Screen')
+
+
 p := [0,0]
 p[1] := IniRead('config_dnf_press_pk.ini', 'pos', 'x', '0')
 p[2] := IniRead('config_dnf_press_pk.ini', 'pos', 'y', '0')
@@ -34,12 +36,12 @@ change(*) {
     btn.Enabled := true
 }
 ; 长按z键1秒以上松开，则点击屏幕左下角
-~z:: {
+$~z:: {
     global p
     KeyWait('z')
     ; OutputDebug A_ThisHotkey  '`t' A_TimeSinceThisHotkey '`n'
     if (A_TimeSinceThisHotkey > 1000) {
-        SendEvent('{Click ' . p[1] . ' ' . p[2] . '}')
+        SendEvent('{Click ' . p[1] . ' ' . p[2] . '}')        
     }
 }
 G := Gui('+MaxSize300x150 +MinSize300x150 +Resize -MinimizeBox -MaximizeBox')
