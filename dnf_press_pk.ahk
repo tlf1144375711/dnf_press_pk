@@ -51,7 +51,7 @@ text := G.AddText('W280', '当前坐标：' . p[1] . ' ' . p[2])
 btn := G.AddButton('W280', '采集')
 btn.OnEvent('Click', change)
 G.AddLink('', '<a href="https://github.com/tlf1144375711/dnf_gatling_combo">Github</a>  <a href="https://space.bilibili.com/44763794">Bilibili</a>')
-Version := '1.0'
+Version := '1.1'
 G.AddStatusBar('', 'Version ' . Version)
 G.Show()
 G.OnEvent('Close', (*) => ExitApp())
